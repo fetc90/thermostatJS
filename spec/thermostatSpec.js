@@ -8,7 +8,15 @@ describe('Thermostat',function(){
     expect(thermostat.temperature).toEqual(20);
   });
 
-  describe('increase temperature',function(){
+  it('has a minimum of 10 degrees',function(){
+    for (i = 0; i < 12; i++ ) {
+      thermostat.decreaseTemperature();
+    }
+    expect(thermostat.temperature).toEqual(10);
+  });
+  
+
+  describe('#increaseTemperature',function(){
     it('increments the temperature by 1',function(){
       thermostat.increaseTemperature();
       expect(thermostat.temperature).toEqual(21);
@@ -16,7 +24,7 @@ describe('Thermostat',function(){
     
   });
 
-  describe('decrease temperature',function(){
+  describe('#decreaseTemperature',function(){
     it('decreases the temperature by 1',function(){
       thermostat.decreaseTemperature();
       expect(thermostat.temperature).toEqual(19);
