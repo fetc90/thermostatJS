@@ -7,6 +7,15 @@ describe('Thermostat',function(){
   it('defaults at 20 degrees',function(){
     expect(thermostat.temperature).toEqual(20);
   });
+
+  describe('increase temperature',function(){
+    it('increments the temperature by 1',function(){
+      thermostat.increaseTemperature();
+      expect(thermostat.temperature).toEqual(21);
+    });
+    
+  })
+  
   
 })
 
