@@ -15,6 +15,14 @@ describe('Thermostat',function(){
     expect(thermostat.temperature).toEqual(10);
   })
 
+  describe('#getTemperature',function(){
+    it('returns the current temperature',function(){ 
+      expect(thermostat.getTemperature()).toEqual(20)
+    })
+    
+  })
+  
+
   describe('#increaseTemperature',function(){
     it('increases the temperature by 1',function(){
       thermostat.increaseTemperature();
@@ -51,6 +59,18 @@ describe('Thermostat',function(){
       expect(thermostat.powerSave).toEqual(false);
     });
   });
+
+  describe('#isPowerSaveOn',function(){
+    it('tells user if power saving mode is on',function(){
+      expect(thermostat.isPowerSaveOn()).toEqual('Power save mode is on')
+    });
+
+    it('tells user if power saving mode is off',function(){
+      thermostat.switchPower();
+      expect(thermostat.isPowerSaveOn()).toEqual('Power save mode is off')
+    });
+    
+  })
   
   describe('#reset',function(){
     it('resets the temperature to 20 degrees',function(){
@@ -77,7 +97,6 @@ describe('Thermostat',function(){
     
 
   })
-  
   
    
 });

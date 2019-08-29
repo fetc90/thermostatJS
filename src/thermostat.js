@@ -7,6 +7,10 @@ function Thermostat(){
 
 }
 
+Thermostat.prototype.getTemperature = function(){
+  return this.temperature
+}
+
 Thermostat.prototype.increaseTemperature = function(){
   if (this.powerSave && this.temperature === this.powerSaveMax){
     return this.temperature
@@ -42,4 +46,11 @@ Thermostat.prototype.energyUsage = function(){
   } else if ( this.temperature > 24 ){
     return "High usage"
   } return "Medium usage"
+}
+
+Thermostat.prototype.isPowerSaveOn = function(){
+  if (this.powerSave === true){
+    return "Power save mode is on"
+  }
+  return "Power save mode is off"
 }
