@@ -50,8 +50,34 @@ describe('Thermostat',function(){
       thermostat.switchPower();
       expect(thermostat.powerSave).toEqual(false);
     });
-    
   });
+  
+  describe('#reset',function(){
+    it('resets the temperature to 20 degrees',function(){
+      thermostat.reset();
+      expect(thermostat.temperature).toEqual(20);
+    })
+  })
+
+  describe('#energyUsage',function(){
+    it('returns low usage when temperature < 18',function(){
+      thermostat.temperature = 17
+      expect(thermostat.energyUsage()).toEqual("Low usage")
+    })
+
+    it('returns medium usage when temperature is between 18-24',function(){
+      thermostat.temperature = 20
+      expect(thermostat.energyUsage()).toEqual("Medium usage")
+    })
+
+    it('returns high usage when temperature is > 24',function(){
+      thermostat.temperature = 25
+      expect(thermostat.energyUsage()).toEqual("High usage")
+    })
+    
+
+  })
+  
   
    
 });
