@@ -1,29 +1,34 @@
 $(document).ready(function(){
   var thermostat = new Thermostat();
-  
   $('#temperature').text(thermostat.temperature);
+
+  function updateTemperature(){
+    $('#temperature').text(thermostat.temperature);
+    $('body').attr('class', thermostat.energyUsage());
+  };
+
+  $('#reset').on('click',function(){
+    thermostat.reset();
+    updateTemperature();
+  })
 
   $('#increase-temperature').on('click',function(){
     thermostat.increaseTemperature();
-  $('#temperature').text(thermostat.temperature);
+    updateTemperature();
   })
   
-  $('#decrease-temperature').on('click', function() { // event listener
-    thermostat.decreaseTemperature(); // update model
-    $('#temperature').text(thermostat.temperature); // update view
+  $('#decrease-temperature').on('click', function() {
+    thermostat.decreaseTemperature();
+    updateTemperature(); 
   })
 
-  $('#switch-power-save-mode').on('click',function(){
-    thermostat.switchPower();
+  $('#power-save-on').on('click',function(){
+    thermostat.turnSaveOn();
 
   })
 
-  $('#energy-usage').on('click',function(){
-    thermostat.energyUsage();
-   
-
-  }) 
-  $('#disaply-energy-usage').text(thermostat.energyUsage());
+  $('#power-save-off').on('click',function(){
+    thermostat.turnSaveOff();
+  })
   
 });
-

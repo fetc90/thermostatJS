@@ -1,0 +1,16 @@
+h1 {
+  font: 800
+}
+
+.low-usage {
+  background-color: aqua
+}
+
+.medium-usage {
+  background-color: orange
+}
+
+.high-usage {
+  background-color: orangered
+}
+

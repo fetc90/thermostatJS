@@ -82,19 +82,18 @@ describe('Thermostat',function(){
   describe('#energyUsage',function(){
     it('returns low usage when temperature < 18',function(){
       thermostat.temperature = 17
-      expect(thermostat.energyUsage()).toEqual("Low usage")
+      expect(thermostat.energyUsage()).toEqual("lightblue")
     })
 
     it('returns medium usage when temperature is between 18-24',function(){
       thermostat.temperature = 20
-      expect(thermostat.energyUsage()).toEqual("Medium usage")
+      expect(thermostat.energyUsage()).toEqual("orange")
     })
 
     it('returns high usage when temperature is > 24',function(){
       thermostat.temperature = 25
-      expect(thermostat.energyUsage()).toEqual("High usage")
+      expect(thermostat.energyUsage()).toEqual("red")
     })
-    
 
   })
   

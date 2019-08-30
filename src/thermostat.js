@@ -32,20 +32,29 @@ Thermostat.prototype.decreaseTemperature = function(){
   }
 };
 
-Thermostat.prototype.switchPower = function(){
-  this.powerSave = !this.powerSave
-};
+Thermostat.prototype.turnSaveOff = function(){
+  this.powerSave = false
+}
+
+Thermostat.prototype.turnSaveOn = function(){
+  if (this.temperature > this.powerSaveMax) {
+    this.reset();
+  }
+  this.powerSave = true
+}
 
 Thermostat.prototype.reset = function(){
   this.temperature = 20
 }
 
 Thermostat.prototype.energyUsage = function(){
-  if ( this.temperature < 18 ){
-    return "Low usage"
-  } else if ( this.temperature > 24 ){
-    return "High usage"
-  } return "Medium usage"
+  if (this.temperature < 18){
+    return "low-usage"
+  } else if (this.temperature > 24){
+    return "high-usage"
+  } else {
+    return "medium-usage"
+  }
 }
 
 Thermostat.prototype.isPowerSaveOn = function(){

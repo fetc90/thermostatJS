@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-  <title>Thermostat</title>
-</head>
-
-<body>
-  
-  <section>
-  <h1 id="temperature"></h1> 
-  <p>
-  <button id="decrease-temperature">-</button>
-  <button id="increase-temperature">+</button>
-  <button id="switch-power-save-mode">Power Save</button>
-  <button id="energy-usage">Energy Usage</button>
-  <text id="display-energy-usage"></text>
-
-</p>
-</section>
-  <script src="jquery.js"></script>
-  <script src="src/interface.js"></script>
-  <script src="src/thermostat.js"></script>
-</body>
+  <head> 
+    <title>Thermostat</title>
+  </head>
+    <body class="medium-usage">
+      <section>
+        
+        <h1 id="temperature"></h1> 
+   
+          <p>
+            <button id="reset">Reset</button>
+            <button id="decrease-temperature">-</button>
+            <button id="increase-temperature">+</button>
+            <button id="power-save-on">Power Save On</button>
+            <button id="power-save-off">Power Save Off</button>
+          </p>
+      </section>
+      <script src="jquery.js"></script>
+      <script src="src/thermostat.js"></script>
+      <script src="src/interface.js"></script>
+      <link href="src/style.css" rel="stylesheet" type="text/css">
+    </body>
 </html>
