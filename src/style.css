@@ -1,6 +1,6 @@
 nav {
   float: left;
-  width: 200px;
+  width: 250px;
 }
 
 h1 {
@@ -14,7 +14,7 @@ h2 {
 }
 
 section {
-  margin-left: 200px;
+  margin-left: 100px;
 }
 
 .low-usage {
@@ -29,3 +29,11 @@ section {
   background-color: orangered
 }
 
+
+.button {
+  border-radius: 28px;
+  border-spacing: 4px;
+  font-family: monospace;
+  font-size: 18px; 
+
+}

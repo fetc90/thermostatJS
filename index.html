@@ -6,7 +6,9 @@
     <body class="medium-usage">
       
         <nav>
-          <h1 id="temperature"></h1>
+          <button class="button" id="increase-temperature">+</button>
+          <h1 id="temperature"> °C </h1>
+          <button class="button" id="decrease-temperature">-</button>
         </nav>
         <section>
           <p>
@@ -14,17 +16,24 @@
             <h2>The current temperature outside is <span id="current-temperature"></span>°C </h2>
             <h2>Power save mode is <span id="power-save-mode"></span></h2>
 
-            <button id="reset">Reset</button>
-            <button id="decrease-temperature">-</button>
-            <button id="increase-temperature">+</button>
-            <button id="power-save-on">Power Save On</button>
-            <button id="power-save-off">Power Save Off</button>
+            <button class="button" id="reset">Reset</button>
+            
+            
+            <button class="button" id="power-save-on">Power Save On</button>
+            <button class="button" id="power-save-off">Power Save Off</button>
             
           </p>
       </section>
+
+
       <script src="jquery.js"></script>
       <script src="src/thermostat.js"></script>
       <script src="src/interface.js"></script>
       <link href="src/style.css" rel="stylesheet" type="text/css">
+
+      
+      </div>
+
+
     </body>
 </html>
