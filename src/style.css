@@ -1,5 +1,20 @@
+nav {
+  float: left;
+  width: 200px;
+}
+
 h1 {
-  font: 800
+  font-family: monospace;
+  font-size: 150px;
+}
+
+h2 {
+  font-family: monospace;
+  font-size: 30px;
+}
+
+section {
+  margin-left: 200px;
 }
 
 .low-usage {

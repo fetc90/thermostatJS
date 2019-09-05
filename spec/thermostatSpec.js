@@ -37,7 +37,7 @@ describe('Thermostat',function(){
       });
 
       it('cannot increase temperature > 32 if power saving mode is off',function(){
-        thermostat.switchPower();
+        thermostat.turnSaveOff();
         for (i = 0; i < 16; i++){
         thermostat.increaseTemperature();
         }
@@ -53,25 +53,19 @@ describe('Thermostat',function(){
     });
   });
 
-  describe('#SwitchPower',function(){
-    it('changes the powersaving mode',function(){
-      thermostat.switchPower();
-      expect(thermostat.powerSave).toEqual(false);
+  describe('#turnSaveOff',function(){
+    it('allows user to increase temperature above 25 degress',function(){
+      thermostat.turnSaveOff();
+
+      for (i = 0; i < 7; i++) {
+        thermostat.increaseTemperature();
+      }
+      expect(thermostat.temperature).toEqual(27);
+  
     });
   });
 
-  describe('#isPowerSaveOn',function(){
-    it('tells user if power saving mode is on',function(){
-      expect(thermostat.isPowerSaveOn()).toEqual('Power save mode is on')
-    });
 
-    it('tells user if power saving mode is off',function(){
-      thermostat.switchPower();
-      expect(thermostat.isPowerSaveOn()).toEqual('Power save mode is off')
-    });
-    
-  })
-  
   describe('#reset',function(){
     it('resets the temperature to 20 degrees',function(){
       thermostat.reset();
@@ -82,20 +76,19 @@ describe('Thermostat',function(){
   describe('#energyUsage',function(){
     it('returns low usage when temperature < 18',function(){
       thermostat.temperature = 17
-      expect(thermostat.energyUsage()).toEqual("lightblue")
+      expect(thermostat.energyUsage()).toEqual("low-usage")
     })
 
     it('returns medium usage when temperature is between 18-24',function(){
       thermostat.temperature = 20
-      expect(thermostat.energyUsage()).toEqual("orange")
+      expect(thermostat.energyUsage()).toEqual("medium-usage")
     })
 
     it('returns high usage when temperature is > 24',function(){
       thermostat.temperature = 25
-      expect(thermostat.energyUsage()).toEqual("red")
+      expect(thermostat.energyUsage()).toEqual("high-usage")
     })
 
   })
   
-   
 });

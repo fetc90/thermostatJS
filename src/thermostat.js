@@ -33,18 +33,24 @@ Thermostat.prototype.decreaseTemperature = function(){
 };
 
 Thermostat.prototype.turnSaveOff = function(){
+  this.isPowerSaveOn();
   this.powerSave = false
 }
 
 Thermostat.prototype.turnSaveOn = function(){
-  if (this.temperature > this.powerSaveMax) {
+
+  if ( this.getTemperature() > this.powerSaveMax ) {
     this.reset();
+  } else {
+    this.powerSave = true;
   }
-  this.powerSave = true
+  
 }
 
 Thermostat.prototype.reset = function(){
   this.temperature = 20
+  this.powerSave = true
+  this.isPowerSaveOn();
 }
 
 Thermostat.prototype.energyUsage = function(){
@@ -58,8 +64,8 @@ Thermostat.prototype.energyUsage = function(){
 }
 
 Thermostat.prototype.isPowerSaveOn = function(){
-  if (this.powerSave === true){
-    return "Power save mode is on"
-  }
-  return "Power save mode is off"
+  if (this.powerSave === false ){
+    return "off"
+  } else {
+    return "on" }
 }
