@@ -29,9 +29,18 @@ section {
   background-color: orangered
 }
 
+.button:hover {
+  background-color: rgb(128, 240, 255);
+}
+
+.power-save-on {
+  background-color: aqua;
+}
 
 .button {
   border-radius: 28px;
+  outline: none;
+  background-color: white;
   border-spacing: 4px;
   font-family: monospace;
   font-size: 18px; 
