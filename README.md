@@ -2,7 +2,7 @@
 
 The purpose of this project was to test drive a simple front-end web app and integrate a weather API. This programme was written in JavaScript and JQuery, tested in Jasmin and uses an API from Open Weather Map.
 
-![gif](https://media.giphy.com/media/gdfVcg8N90BOct0YHl/giphy.gif)
+![gif](https://media.giphy.com/media/TFHtemE8gaJc7yNWiT/giphy.gif)
 
 The user can:
 * Increase and decrease the temperature.
